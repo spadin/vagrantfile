@@ -41,7 +41,7 @@ Vagrant.configure(2) do |config|
     apt-get install -y google-chrome-stable
 
     LATEST_CHROMEDRIVER_RELEASE=`curl -s http://chromedriver.storage.googleapis.com/LATEST_RELEASE`
-    wget -N http://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_RELEASE}/chromedriver_linux64.zip -P /tmp
+    wget -q -N http://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_RELEASE}/chromedriver_linux64.zip -P /tmp
     unzip /tmp/chromedriver_linux64.zip -d /tmp
     rm /tmp/chromedriver_linux64.zip
     chmod +x /tmp/chromedriver
