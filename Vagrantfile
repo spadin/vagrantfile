@@ -29,11 +29,11 @@ Vagrant.configure(2) do |config|
     apt-get install -y libcurl3 libcurl3-gnutls libcurl4-openssl-dev
     apt-get install -y redis-server
 
-    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    curl -sL https://deb.nodesource.com/setup | bash -
     apt-get install -y nodejs
 
-    echo "mysql-server mysql-server/root_password password ''" | sudo debconf-set-selections
-    echo "mysql-server mysql-server/root_password_again password ''" | sudo debconf-set-selections
+    echo "mysql-server mysql-server/root_password password ''" | debconf-set-selections
+    echo "mysql-server mysql-server/root_password_again password ''" | debconf-set-selections
 
     apt-get install -y mysql-server mysql-client libmysqlclient-dev
 
