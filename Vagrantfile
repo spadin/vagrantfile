@@ -66,7 +66,7 @@ Vagrant.configure(2) do |config|
     homeshick clone spadin/dotfilesdeux
     homeshick link -f
 
-    vim -u ~/.vimrc.d/plugins.vim +PluginInstall +qall
+    vim -u ~/.vimrc.d/plugins.vim +PluginInstall +qall > /dev/null 2>&1
 
   SHELL
 
