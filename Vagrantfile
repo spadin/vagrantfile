@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
     apt-get install -y libcurl3 libcurl3-gnutls libcurl4-openssl-dev
     apt-get install -y redis-server
 
-    curl -sL https://deb.nodesource.com/setup | bash -
+    wget -qO- https://deb.nodesource.com/setup | bash -
     apt-get install -y nodejs
 
     echo "mysql-server mysql-server/root_password password ''" | debconf-set-selections
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
     apt-get install -y xvfb unzip
     apt-get install -y google-chrome-stable
 
-    LATEST_CHROMEDRIVER_RELEASE=`curl -s http://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+    LATEST_CHROMEDRIVER_RELEASE=`wget -qO- http://chromedriver.storage.googleapis.com/LATEST_RELEASE`
     wget -q -N http://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_RELEASE}/chromedriver_linux64.zip -P /tmp
     unzip /tmp/chromedriver_linux64.zip -d /tmp
     rm /tmp/chromedriver_linux64.zip
